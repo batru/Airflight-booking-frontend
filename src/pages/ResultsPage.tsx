@@ -140,8 +140,8 @@ export function ResultsPage() {
     <BackgroundImage>
       <Navbar />
       
-      <div className="container mx-auto px-4 py-12 pt-24">
-        <div className="mb-8">
+      <div className="container mx-auto  px-4 py-12 pt-32 w-3/4">
+        <div className="mb-6">
           <div className="flex items-center justify-between mb-6">
             {/* <Button variant="outline" onClick={handleBack} className="bg-white/90 hover:bg-white shadow-lg">
               <ArrowLeft className="mr-2 h-4 w-4" />
@@ -174,7 +174,7 @@ export function ResultsPage() {
         </div>
         
         {/* <div className="flex flex-col lg:flex-row gap-6"> */}
-        <div className="flex flex-row gap-3 max-w-7xl mx-auto mt-10">
+        <div className="flex flex-row gap-3 max-w-7xl mx-auto mt-6">
 
           {/* Results */}
           <div className="flex-1">
@@ -186,7 +186,7 @@ export function ResultsPage() {
           </div>
           
           {/* Desktop Filter Sidebar */}
-          <div className="hidden lg:block w-64 flex-shrink-0">
+          <div className="hidden lg:block w-64 flex-shrink-0 mt-6">
             <FlightFilter
               filters={filters}
               onFilterChange={handleFilterChange}
