@@ -35,7 +35,7 @@ interface FlightResultsProps {
 
 export function FlightResults({ searchData, flights, onSelectFlight }: FlightResultsProps) {
   return (
-    <div className="w-full space-y-2 mt-6">
+    <div className="w-full space-y-2 mt-2 lg:mt-6">
       <Card>
         <CardHeader className="py-2 px-4">
           <CardTitle className="text-base ">Available Flights</CardTitle>
@@ -92,11 +92,11 @@ export function FlightResults({ searchData, flights, onSelectFlight }: FlightRes
                   </div>
                 </div>
 
-                <div className="flex flex-col justify-between items-end border-l border-gray-200 pl-3 ml-2 text-right">
+                <div className="flex flex-col justify-between items-start md:items-end md:border-l border-gray-200 md:pl-3 md:ml-2 text-left md:text-right">
 
                   <div className="text-sm text-gray-600">From</div>
                   <div className="text-xl font-semibold">${flight.price}</div>
-                  <Button onClick={() => onSelectFlight(flight)} size="sm" className="mt-2">
+                  <Button onClick={() => onSelectFlight(flight)} size="sm" className="mt-2 w-full md:w-auto">
                     Select
                   </Button>
                 </div>

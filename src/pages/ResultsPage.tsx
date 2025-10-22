@@ -140,44 +140,36 @@ export function ResultsPage() {
     <BackgroundImage>
       <Navbar />
       
-      <div className="container mx-auto  px-4 py-12 pt-32 w-3/4">
-        <div className="mb-6">
-          <div className="flex items-center justify-between mb-6">
-            {/* <Button variant="outline" onClick={handleBack} className="bg-white/90 hover:bg-white shadow-lg">
-              <ArrowLeft className="mr-2 h-4 w-4" />
-              Back to Search
-            </Button> */}
-            
-            {/* Mobile Filter Toggle */}
-            <Sheet>
-              <SheetTrigger asChild>
-                <Button variant="outline" className="lg:hidden bg-white/90 hover:bg-white shadow-lg">
-                  <Filter className="mr-2 h-4 w-4" />
-                  Filters
-                </Button>
-              </SheetTrigger>
-              <SheetContent side="right" className="w-80">
-                <SheetHeader>
-                  <SheetTitle>Filters</SheetTitle>
-                </SheetHeader>
-                <div className="mt-6">
-                  <FlightFilter
-                    filters={filters}
-                    onFilterChange={handleFilterChange}
-                    availableAirlines={availableAirlines}
-                    resultCount={filteredFlights.length}
-                  />
-                </div>
-              </SheetContent>
-            </Sheet>
-          </div>
-        </div>
-        
+      <div className="container mx-auto px-3 md:px-4 py-12 pt-17 w-full lg:w-3/4">
         {/* <div className="flex flex-col lg:flex-row gap-6"> */}
-        <div className="flex flex-row gap-3 max-w-7xl mx-auto mt-6">
+        <div className="flex flex-col lg:flex-row gap-3 w-full lg:max-w-7xl mx-auto mt-6">
 
           {/* Results */}
           <div className="flex-1">
+            {/* Mobile Filter Toggle */}
+            <div className="lg:hidden flex justify-end">
+              <Sheet>
+                <SheetTrigger asChild>
+                  <Button size="sm">
+                    <Filter className="mr-2 h-4 w-4" />
+                    Filters
+                  </Button>
+                </SheetTrigger>
+                <SheetContent side="right" className="w-80">
+                  <SheetHeader>
+                    <SheetTitle>Filters</SheetTitle>
+                  </SheetHeader>
+                  <div className="mt-6">
+                    <FlightFilter
+                      filters={filters}
+                      onFilterChange={handleFilterChange}
+                      availableAirlines={availableAirlines}
+                      resultCount={filteredFlights.length}
+                    />
+                  </div>
+                </SheetContent>
+              </Sheet>
+            </div>
             <FlightResults
               searchData={searchData}
               flights={filteredFlights}
@@ -186,7 +178,7 @@ export function ResultsPage() {
           </div>
           
           {/* Desktop Filter Sidebar */}
-          <div className="hidden lg:block w-64 flex-shrink-0 mt-6">
+          <div className="hidden lg:block w-64 flex-shrink-0 lg:mt-6">
             <FlightFilter
               filters={filters}
               onFilterChange={handleFilterChange}

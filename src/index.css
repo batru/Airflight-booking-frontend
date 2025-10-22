@@ -2874,3 +2874,122 @@ html {
     transform: translate3d(var(--tw-exit-translate-x, 0), var(--tw-exit-translate-y, 0), 0) scale3d(var(--tw-exit-scale, 1), var(--tw-exit-scale, 1), var(--tw-exit-scale, 1)) rotate(var(--tw-exit-rotate, 0));
   }
 }
+
+/* Sheet animation classes */
+.data-\[state\=open\]\:slide-in-from-right[data-state="open"] {
+  animation: slideInFromRight 0.5s ease-out;
+}
+
+.data-\[state\=closed\]\:slide-out-to-right[data-state="closed"] {
+  animation: slideOutToRight 0.3s ease-in;
+}
+
+@keyframes slideInFromRight {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideOutToRight {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+/* Custom responsive utilities for Results Page */
+.justify-end {
+  justify-content: flex-end;
+}
+
+.pt-17 {
+  padding-top: calc(var(--spacing) * 17);
+}
+
+/* Sheet positioning utilities */
+.inset-y-0 {
+  top: 0;
+  bottom: 0;
+}
+
+.border-l {
+  border-left-width: 1px;
+  border-left-style: solid;
+}
+
+.w-80 {
+  width: calc(var(--spacing) * 80);
+}
+
+.w-3\/4 {
+  width: 75%;
+}
+
+/* Screen reader only - hides content visually but keeps it accessible */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+@media (width >= 40rem) {
+  .sm\:max-w-sm {
+    max-width: 24rem;
+  }
+}
+
+@media (width >= 48rem) {
+  .md\:border-l {
+    border-left-style: var(--tw-border-style);
+    border-left-width: 1px;
+  }
+
+  .md\:items-end {
+    align-items: flex-end;
+  }
+
+  .md\:pl-3 {
+    padding-left: calc(var(--spacing) * 3);
+  }
+
+  .md\:ml-2 {
+    margin-left: calc(var(--spacing) * 2);
+  }
+
+  .md\:text-right {
+    text-align: right;
+  }
+
+  .md\:w-auto {
+    width: auto;
+  }
+
+  .md\:px-4 {
+    padding-inline: calc(var(--spacing) * 4);
+  }
+}
+
+@media (width >= 64rem) {
+  .lg\:flex-row {
+    flex-direction: row;
+  }
+
+  .lg\:w-3\/4 {
+    width: 75%;
+  }
+
+  .lg\:max-w-7xl {
+    max-width: 80rem;
+  }
+}
